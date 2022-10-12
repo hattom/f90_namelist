@@ -57,4 +57,9 @@ program test_namelist
   print *, "rab", (rab(i), i=1,LENGTH)
   print *, "iaa", (iaa(i), i=1,LENGTH)
 
+  open(78, file="output")
+  write(78, NML=VARS, IOSTAT=status)
+  close(78)
+  print *, "write output: status", status
+
 end program test_namelist
