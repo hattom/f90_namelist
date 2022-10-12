@@ -36,7 +36,8 @@ program test_namelist
 
   open(77, file="input")
   read(77, NML=VARS, IOSTAT=status)
-  print *, "status", status
+  close(77)
+  print *, "read input: status", status
 
   print *, "--" 
 
